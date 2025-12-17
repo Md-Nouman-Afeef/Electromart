@@ -5,17 +5,6 @@ function showPage(id) {
     document.getElementById(id).style.display = "block";
 }
 
-// SEARCH PRODUCT
-function searchProduct() {
-    let query = document.getElementById("search").value.toLowerCase();
-    let items = document.querySelectorAll(".product-card");
-
-    items.forEach(card => {
-        let title = card.querySelector("h3").innerText.toLowerCase();
-        card.style.display = title.includes(query) ? "block" : "none";
-    });
-}
-
 // FORM VALIDATION
 function submitForm() {
     let name = document.getElementById("name").value.trim();
@@ -52,3 +41,17 @@ function submitForm() {
 
     document.getElementById("contactForm").reset();
 }
+
+let total = 0;
+
+function addToCart(name, price) {
+    let cartItems = document.getElementById("cartItems");
+
+    let li = document.createElement("li");
+    li.innerText = name + " - ₹" + price;
+    cartItems.appendChild(li);
+
+    total += price;
+    document.getElementById("totalAmount").innerText = total;
+}
+
