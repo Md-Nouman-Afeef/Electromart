@@ -30,7 +30,6 @@ nav button {
     margin: 5px;
     font-weight: bold;
     border-radius: 5px;
-    cursor: pointer;
 }
 
 /* CONTAINER */
@@ -72,7 +71,6 @@ nav button {
     padding: 10px 22px;
     border-radius: 6px;
     border: none;
-    cursor: pointer;
 }
 
 /* PRODUCT GRID */
@@ -87,7 +85,7 @@ nav button {
     padding: 15px;
     text-align: center;
     border-radius: 10px;
-    transition: 0.3s;
+    /* transition: 0.3s; */
 }
 
 .product-card img {
@@ -103,28 +101,30 @@ nav button {
     color: black;
     font-weight: bold;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-/* SEARCH BAR */
-#search {
-    width: 100%;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    border: none;
+#cartBox{
+    margin:20px 0; 
+    padding:15px;
+    background:#1e272e;
+    border-radius:10px;
+}
+
+#cartItems {
+    list-style: none;
+    padding-left: 0;
+}
+
+#cartItems li {
+    margin: 5px 0;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
 }
 
 /* CONTACT FORM */
 #contactForm input, 
 #contactForm textarea {
-    /* width: 95%;
-    padding: 12px;
-    margin: 10px 0;
-    background: #1e272e;
-    /* border: 1px solid #0abde3;
-    border-radius: 8px;
-    color: white; */
+
         width: 100%;
         padding: 10px;
         margin-top: 10px;
