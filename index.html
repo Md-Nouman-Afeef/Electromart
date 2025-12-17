@@ -14,7 +14,6 @@
     <nav>
         <button onclick="showPage('home')">Home</button>
         <button onclick="showPage('products')">Products</button>
-        <button onclick="showPage('about')">About</button>
         <button onclick="showPage('contact')">Contact</button>
     </nav>
 </header>
@@ -35,8 +34,6 @@
     <section id="products" class="page">
         <h2>Our Products</h2>
 
-        <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()">
-
         <div id="productList" class="products-grid">
 
             <div class="product-card">
@@ -44,7 +41,7 @@
                 <h3>Smartphone</h3>
                 <p>Latest Android & iOS models.</p>
                 <h4>Price: 119999 Rs</h4>
-                <button>Buy Now</button>
+                <button onclick="addToCart('Smartphone', 119999)">Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -52,7 +49,8 @@
                 <h3>Headphones</h3>
                 <p>Noise-cancelling wireless audio.</p>
                 <h4>Price: 59999 Rs</h4>
-                <button>Buy Now</button>
+                <button onclick="addToCart('Headphones', 59999)">Add to Cart</button>
+
             </div>
 
             <div class="product-card">
@@ -60,7 +58,7 @@
                 <h3>Laptop</h3>
                 <p>Powerful laptops for gaming & work.</p>
                 <h4 ></h4>Price: 169999 Rs</h4>
-                <button>Buy Now</button>
+                <button onclick="addToCart('Laptop', 169999)">Add to Cart</button>
             </div>
 
             <div class="product-card">
@@ -68,18 +66,17 @@
                 <h3>Smart TV</h3>
                 <p>4K Ultra HD high-quality displays.</p>
                 <h4>Price: 99999 Rs</h4>
-                <button>Buy Now</button>
+                <button onclick="addToCart('Smart TV', 99999)">Add to Cart</button>
             </div>
 
         </div>
-    </section>
 
-    <!-- ABOUT PAGE -->
-    <section id="about" class="page">
-        <h2>About Us</h2>
-        <p>ElectroMart is a trusted family-owned electronic retailer with over 10+ years in the industry.</p>
-        <p>We bring premium gadgets to customers at affordable prices with excellent service.</p>
-        <p>Our vision is to make high-tech products accessible to everyone.</p>
+        <!-- CART -->
+        <div id="cartBox">
+            <h3>Cart</h3>
+            <ul id="cartItems"></ul>
+            <h4>Total: <span id="totalAmount">0</span></h4>
+        </div>
     </section>
 
     <!-- CONTACT PAGE -->
@@ -104,7 +101,3 @@
 
 </body>
 </html>
-
-
-
-
