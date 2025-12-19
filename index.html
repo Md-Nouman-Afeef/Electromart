@@ -6,14 +6,39 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+   <style>
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            letter-spacing: 1px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav button {
+    background: white;
+    color: #0a3d62;
+    border: none;
+    padding: 10px 18px;
+    margin: 5px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+    </style>
 <body>
 
 <!-- HEADER -->
-<header>
+<header style="  background: #0a3d62;
+    padding: 20px;
+    text-align: center; ">
     <h1>ElectroMart</h1>
     <nav>
         <button onclick="showPage('home')">Home</button>
         <button onclick="showPage('products')">Products</button>
+        <!-- <button onclick="showPage('about')">About</button> -->
         <button onclick="showPage('contact')">Contact</button>
     </nav>
 </header>
@@ -34,9 +59,11 @@
     <section id="products" class="page">
         <h2>Our Products</h2>
 
-        <div id="productList" class="products-grid">
+        <!-- <input type="text" id="search" placeholder="Search products..." onkeyup="searchProduct()"> -->
 
- <div class="product-card">
+        <div id="productList" class="products-grid">
+            
+            <div class="product-card">
                 <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcTdNKEdlQM7U-uIYGqq_mvKYZJNCBKW9eYuMCiWnaMWxGDnmEOesQu5jSvt84YEZE7cARI4Lqa4z_ZBaUI5UdastjCc8ZRwgu1_oGbUcWnBKQZoTT65_Pxl" alt="Phone">
                 <h3>iphone 13 pro</h3>
                 <h4>Price: 119999 Rs</h4>
@@ -51,9 +78,8 @@
             </div>
 
             <div class="product-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCRHsiy1qWzUUZHNTJ4SKA44Klol6DfV_pQ&s" alt="Headphones" height="270px">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsAupDVgH46JouC7oGhyNWK42W2ncg9b0ZBw&s">
                 <h3>Moto g57</h3>
-                <p>Noise-cancelling wireless audio.</p>
                 <h4>Price: 24999 Rs</h4>
                 <button onclick="addToCart('Moto g57', 24999)">Add to Cart</button>
             </div>
@@ -61,23 +87,13 @@
             <div class="product-card">
                 <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcSDtSPcuy-H15GxHVLIuMz3j1NXTnuYpwEmT_3G9m4eibhWhxoOmKB8GL6D17sOY1L62WQz6c23P__PV9YbEzNaSNr2LSTc0eSkRC5FoHqJL3s6SMDlj8sA" alt="Headphones" height="270px">
                 <h3>Noise f12</h3>
-                <p>Noise-cancelling wireless audio.</p>
                 <h4>Price: 5999 Rs</h4>
                 <button onclick="addToCart('Noise Earphone', 5999)">Add to Cart</button>
-            </div>
-            
-            <div class="product-card">
-                <img src="https://www.boat-lifestyle.com/cdn/shop/files/Artboard1_ac192d39-3b63-4a80-a049-73e0a6c2b149.png?v=1728871112" alt="Headphones" height="270px">
-                <h3>Boat s25 </h3>
-                <p>Noise-cancelling wireless audio.</p>
-                <h4>Price: 2999 Rs</h4>
-                <button onclick="addToCart('Noise Earphone', 2999)">Add to Cart</button>
             </div>
 
             <div class="product-card">
                 <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQUgb4Aqr9vbZzTpkjSVbxrFHyuTmJcyaYebtA7VEFn6ob_b4hPCy769BK6grNFS89rv4d7JtMDG1Mj-TB5I1UQz6S4stMA0oagz_jpREUKdXns4PpMnhoPutk" alt="Laptop">
                 <h3>Mackbook M4 pro</h3>
-                <p>Powerful laptops for gaming & work.</p>
                 <h4 ></h4>Price: 169999 Rs</h4>
                 <button onclick="addToCart('Mackbook M4 pro', 169999)">Add to Cart</button>
             </div>
@@ -85,27 +101,24 @@
             <div class="product-card">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvzSzwglw3ukQupGu4aKQxDqVmnrxy4gJzCw&s" alt="Laptop">
                 <h3>Dell Insperon</h3>
-                <p>Powerful laptops for gaming & work.</p>
                 <h4 ></h4>Price: 99999 Rs</h4>
                 <button onclick="addToCart('Dell Insperon', 99999)">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTyLZYx_yZdv5BFA8daEnYIiuJjkGoCxTgRMDXvcA2QWI9qtP5VnZo_kwvEQ3aVNGVCnqJMubJtEGZCdCilmMDn4rDgeSY8HIiHGw9OKXAeQJI7JJvM8DoUcA" alt="Television" >
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT79ysI57ioITJ1lDp0-pPG5S0jlCWd_Unkvw&s">
                 <h3>Samsung Smart TV</h3>
-                <p>4K Ultra HD high-quality displays.</p>
                 <h4>Price: 99999 Rs</h4>
                 <button onclick="addToCart('Samsung Smart TV', 99999)">Add to Cart</button>
             </div>
 
             <div class="product-card">
-                <img src="https://electronicparadise.in/cdn/shop/files/Sony32SmartLEDTVwithDolbyAudio.jpg?v=1702116273&width=640" alt="Television" >
+                <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTyLZYx_yZdv5BFA8daEnYIiuJjkGoCxTgRMDXvcA2QWI9qtP5VnZo_kwvEQ3aVNGVCnqJMubJtEGZCdCilmMDn4rDgeSY8HIiHGw9OKXAeQJI7JJvM8DoUcA" alt="Television">
                 <h3>Sony Smart TV</h3>
-                <p>4K Ultra HD high-quality displays.</p>
                 <h4>Price:89999 Rs</h4>
                 <button onclick="addToCart('Sony Smart TV', 89999)">Add to Cart</button>
             </div>
-            
+
         </div>
 
         <!-- CART -->
