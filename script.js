@@ -5,6 +5,7 @@ function showPage(id) {
     document.getElementById(id).style.display = "block";
 }
 
+
 // FORM VALIDATION
 function submitForm() {
     let name = document.getElementById("name").value.trim();
@@ -35,6 +36,18 @@ function submitForm() {
         output.innerHTML = "Phone must be 10 digits!";
         return;
     }
+ let data =
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Phone: " + phone + "\n" +
+        "Message: " + msgBox + "\n" +
+        "---------------------\n";
+
+    let file = new Blob([data], { type: "text/plain" });
+    let a = document.createElement("a");
+    a.href = URL.createObjectURL(file);
+    a.download = "feedback.txt";
+    a.click();
 
     output.classList.add("success");
     output.innerHTML = "Message sent successfully!";
@@ -54,4 +67,5 @@ function addToCart(name, price) {
     total += price;
     document.getElementById("totalAmount").innerText = total;
 }
+
 
