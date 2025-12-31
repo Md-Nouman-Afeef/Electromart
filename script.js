@@ -57,15 +57,24 @@ function submitForm() {
 
 let total = 0;
 
-function addToCart(name, price) {
-    let cartItems = document.getElementById("cartItems");
+function addToCart(btn,name,price){
 
+    // change button
+    btn.style.background = "green";
+    btn.style.color = "white";
+    btn.innerText = "Added to Cart";
+
+    // show message
+    let msg = document.createElement("p");
+    msg.innerText = "Item added to cart!";
+    msg.style.color = "lightgreen";
+    btn.parentElement.appendChild(msg);
+
+    // normal cart work
     let li = document.createElement("li");
     li.innerText = name + " - ₹" + price;
-    cartItems.appendChild(li);
+    document.getElementById("cartItems").appendChild(li);
 
     total += price;
     document.getElementById("totalAmount").innerText = total;
 }
-
-
