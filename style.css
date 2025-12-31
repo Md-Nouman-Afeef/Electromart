@@ -5,7 +5,6 @@ body {
     color: white;
 }
 
-
 /* CONTAINER */
 .container {
     max-width: 1000px;
@@ -64,6 +63,7 @@ body {
 .product-card img {
     width: 100%;
     border-radius: 10px;
+    object-fit: cover;
 }
 
 .product-card button {
@@ -73,7 +73,6 @@ body {
     background: #0abde3;
     color: black;
     font-weight: bold;
-    border-radius: 5px;
 }
 
 #cartBox{
@@ -93,7 +92,6 @@ body {
     border-bottom: 1px solid #555;
     padding-bottom: 5px;
 }
-
 
 /* CONTACT FORM */
 #contactForm input, 
