@@ -56,25 +56,41 @@ function submitForm() {
 }
 
 let total = 0;
+function addToCart(btn, name, price){
 
-function addToCart(btn,name,price){
+    // stop duplicate
+    if(btn.classList.contains("added")) return;
 
-    // change button
+    btn.classList.add("added");
     btn.style.background = "green";
     btn.style.color = "white";
-    btn.innerText = "Added to Cart";
+    btn.innerText = "Added To Cart";
 
-    // show message
-    let msg = document.createElement("p");
-    msg.innerText = "Item added to cart!";
-    msg.style.color = "lightgreen";
-    btn.parentElement.appendChild(msg);
-
-    // normal cart work
+    // cart list work
     let li = document.createElement("li");
     li.innerText = name + " - ₹" + price;
     document.getElementById("cartItems").appendChild(li);
 
     total += price;
     document.getElementById("totalAmount").innerText = total;
+}
+
+// ORDER NOW FUNCTION
+function orderNow(){
+    if(total === 0){
+        alert("Cart is empty!");
+        return;
+    }
+    alert("🎉 Your order is confirmed!");
+    // clear cart
+    document.getElementById("cartItems").innerHTML = "";
+    document.getElementById("totalAmount").innerText = 0;
+    total = 0;
+    // reset all add to cart buttons
+    document.querySelectorAll(".product-card button").forEach(btn=>{
+        btn.classList.remove("added");
+        btn.style.background = "#0abde3";
+        btn.style.color = "black";
+        btn.innerText = "Add to Cart";
+    } );
 }
